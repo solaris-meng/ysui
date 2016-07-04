@@ -52,7 +52,9 @@
 
     </tr>
 </table>
+<div id="main" style="height:600px;width:99%"></div>
 </body>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 
@@ -82,7 +84,7 @@
 //            $(this).css("background","white");
             move();
         }
-        $(".del").click(function(){
+        /*$(".del").click(function(){
 //            console.log($(this))
             if($(".add").length==6){
                 $(".add").eq($(".add").length-1).html('<span class="tian"></span>').removeClass("add").addClass("addnew");
@@ -93,7 +95,7 @@
                 move();
             }
 
-        });
+        });*/
     });
 
 
@@ -124,5 +126,133 @@
         })
     }
    move();
+
+//    图
+
+    jQuery(document).ready(function() {
+        $.ajax({
+            url: 'http://101.200.130.178/manualtools/accountdays/json/d98f7b1d4bd045e58b13ff711e2b6b84/%E5%96%B5%E6%92%AD',
+            type: 'GET',
+           dataType: 'jsonp',
+            jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+            jsonpCallback:"callBackFun",
+            /*  timeout: 1000,
+            cache: false,*/
+//        beforeSend: LoadFunction, //加载执行方法
+//        error: erryFunction,  //错误执行方法
+            success: function(a){
+                 var json = $.parseJSON(a);
+                console.log(json)
+//                var $a=eval('('+a+')');
+//                console.log($a);
+            }//成功执行方法
+        });
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+
+        require(
+                [
+                    'echarts',
+                    'echarts/chart/line',
+                    'echarts/chart/k'
+                ],
+                function(ec) {
+
+                    var myChart = ec.init(document.getElementById('main'));
+                    var days = new Array();
+                    days.push('06-21')
+
+                    days.push('06-22')
+
+                    days.push('06-23')
+
+                    days.push('06-24')
+
+                    days.push('06-25')
+
+                    days.push('06-26')
+
+                    days.push('06-27')
+
+                    days.push('06-28')
+
+                    days.push('06-29')
+
+                    days.push('06-30')
+
+                    days.push('07-01')
+
+                    days.push('07-02')
+
+                    days.push('07-03')
+
+                    days.push('07-04')
+
+                    var pvs = [5040, 5824, 7002, 6491, 6251, 6880, 6025, 5414, 5210, 5116, 6431, 6866, 6895, 2853];
+                    var dls = [409, 496, 683, 597, 510, 538, 475, 438, 429, 443, 519, 575, 530, 211];
+                    var ats = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+                    option = {
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        title: {
+                            left: 'center',
+                            text: '喵播 近期总数据'
+                        },
+                        legend: {
+                            data: ['总点击', '总下载', '总激活']
+                        },
+                        toolbox: {
+                            show: false,
+                            feature: {
+                                mark: {show: true},
+                                dataView: {show: true, readOnly: false},
+                                magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                                restore: {show: true},
+                                saveAsImage: {show: true}
+                            }
+                        },
+                        calculable: true,
+                        xAxis: [
+                            {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: days
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'value'
+                            }
+                        ],
+                        series: [
+                            {
+                                name: '总点击',
+                                type: 'line',
+                                line: '总量',
+                                data: pvs
+                            },
+                            {
+                                name: '总下载',
+                                type: 'line',
+                                line: '总量',
+                                data: dls
+                            },
+                            {
+                                name: '总激活',
+                                type: 'line',
+                                line: '总量',
+                                data: ats
+                            }
+                        ]
+                    };
+                    myChart.setOption(option);
+                }
+        );
+    });
 </script>
 </html>

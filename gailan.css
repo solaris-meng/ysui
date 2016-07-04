@@ -18,8 +18,8 @@ input,button,textarea,select{*font-size:100%}
 /*************************¸Å¿ö*************************************/
 
 table{
-    width: 80%;
-    margin: 20px auto;
+    width:99%;
+    /*margin: 20px auto;*/
     border: 1px solid rgb(232,232,232);
 }
 td,tr{
@@ -90,4 +90,7 @@ td,tr{
     position: absolute;
     right: 2px;
     top: 2px;
+}
+#main{
+    border: 1px solid rgb(232,232,232);
 }

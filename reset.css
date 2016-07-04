@@ -250,13 +250,13 @@ input,button,textarea,select{*font-size:100%}
   background-position: -198px -5px;
 }
 .yushan_right {
-  width:80%;
-  margin-top: 10px;
-  margin-left: 175px;
-  background: #fa3430;
-  height:710px;
+  width:90%;
+  /*margin-top: 10px;*/
+  margin-left: 160px;
+  /*background: #fa3430;*/
+  height:726px;
   /*height: 90%;*/
-  padding-left: 140px;
+  /*padding-left: 140px;*/
   /*overflow-y: auto;*/
   /*min-width: 950px;*/
   /*overflow-x: auto;*/
