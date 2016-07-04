@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gailan.css"/>
+    <title></title>
+</head>
+<body>
+<table>
+    <tr>
+        <td class="jinri" style="border: 0;">
+            今日
+        </td>
+    </tr>
+    <tr>
+        <td class="add">
+            <p class="a1">新增用户</p>
+            <p class="a2">61</p>
+            <p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>
+            <span class="xia"></span>
+        </td>
+        <td class="add">
+            <p class="a1">新增用户</p>
+            <p class="a2">61</p>
+            <p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>
+            <span class="xia"></span>
+        </td>
+        <!--<td class="add">
+            <p class="a1">新增用户</p>
+            <p class="a2">61</p>
+            <p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>
+            <span class="xia"></span>
+        </td>
+        <td class="add">
+            <p class="a1">新增用户</p>
+            <p class="a2">61</p>
+            <p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>
+            <span class="xia"></span>
+        </td>-->
+        <td class="add">
+            <p class="a1">新增用户</p>
+            <p class="a2">61</p>
+            <p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>
+
+            <span class="xia"></span>
+        </td>
+        <td class="addnew">
+            <span class="tian">
+
+            </span>
+        </td>
+
+    </tr>
+</table>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+    $(".addnew").click(function(){
+        if($(".add").length<5){
+            var html='<td class="add">'+
+                    '<p class="a1">新增用户</p>'+
+                    '<p class="a2">61</p>'+
+                    '<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>'+
+                    '<img src="del.png" alt="" class="del"/>'+
+                    '<span class="xia"></span>'+
+                    '</td>';
+
+            $(this).before(html);
+            move();
+        }else if($(".add").length==5){
+
+            var html= '<p class="a1">新增用户</p>'+
+                    '<p class="a2">61</p>'+
+                    '<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>'+
+                    '<img src="del.png" alt="" class="del"/>'+
+                    '<span class="xia"></span>';
+
+            $(this).html(html);
+            $(this).removeClass("addnew");
+            $(this).addClass("add");
+//            $(this).css("background","white");
+            move();
+        }
+        $(".del").click(function(){
+//            console.log($(this))
+            if($(".add").length==6){
+                $(".add").eq($(".add").length-1).html('<span class="tian"></span>').removeClass("add").addClass("addnew");
+                $(".addnew").css("border","0");
+                move();
+            }else{
+                $(this).parent().remove();
+                move();
+            }
+
+        });
+    });
+
+
+    function move(){
+        $(".add").mouseover(function(){
+
+//        console.log($(".add").index($(this)))//移动的块的下标
+//        console.log($(".add").length);
+//        if($(".add").index($(this))!=$(".add").length-1){
+            $(this).css("background","white");
+            $(this).css("border-bottom","2px solid #0099ff");
+            $(this).children(".xia").css("visibility","visible");
+//        }
+        });
+        $(".addnew").mouseover(function(){
+            $(this).css("background","rgb(184,196,206)")
+            $(this).children(".tian").css("background-position","0 0");
+        });
+        $(".addnew").mouseout(function(){
+            $(this).css("background","white");
+            $(this).children(".tian").css("background-position","0 -100px");
+        });
+        $(".add").mouseout(function(){
+//        if($(".add").index($(this))!=$(".add").length-1){
+            $(this).css("border-bottom","1px solid rgb(232,232,232)");
+            $(this).children(".xia").css("visibility","hidden");
+//        }
+        })
+    }
+   move();
+</script>
+</html>

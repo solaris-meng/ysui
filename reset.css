@@ -1,0 +1,263 @@
+html{font-family:"微软雅黑",Arial,sans-serif}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td,b,i,strong{padding:0;margin:0;font-family:Microsoft YaHei,sans-serif,Arial;list-style: none}
+strong,b{font-weight: normal;font-size:13px;}
+fieldset,img{border:0}
+a{text-decoration:none;color:#000;outline:none}
+li{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{*font-size:100%}
+.clear:after{
+  display:block; 
+  content:"clear"; 
+  height:0; 
+  clear:both;
+  visibility:hidden;
+}
+.clear{zoom:1;}
+/***************************************************************/
+.title{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  background: rgb(53,64,82);
+  box-shadow: 0px 3px 5px #888;
+}
+.logo{
+  /*float: left;*/
+  width:50px;
+  vertical-align: middle;
+  margin-left: 25px;
+
+}
+.app-group{
+  z-index: 1000;
+  display: none;
+  position: absolute;
+  left: 106px;
+  top: 42px;
+  box-shadow: 1px 2px 3px #888;
+  width: 202px;
+}
+.text{
+  margin-left: 50px;
+  border-radius: 3px;
+  border: 0;
+  list-style: none;
+  width:150px;
+  height: 30px;
+  background: white url("select_sw.png") no-repeat;
+  /*background-size: 5px 5px;*/
+  background-position: 133px 14px;
+  padding-left:5px;
+  font-size: 13px;
+}
+.icon{
+  margin-left: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 19px;
+  height: 22px;
+  background: url("./icon-pingtai.png") no-repeat;
+  background-position: -73px -23px;
+}
+.app_list {
+  background: #FFF;
+  font-size: 12px;
+  font-family: 'PingFang SC', arial, 'Microsoft YaHei';
+}
+.app-group .app-groupcont .my-app {
+  height: 30px;
+  line-height: 30px;
+  background: #e6e6e6;
+  padding: 10px 10px 10px 14px;
+  font-family: 'PingFang SC', arial, 'Microsoft YaHei', sans-serif;
+  text-align: left;
+  font-size: 14px!important;
+  position: relative;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-top-right-radius: 3px;
+}
+.app_list ul li a span.icon-bookmark {
+  content: "";
+  display: none;
+}
+.app_list ul li {
+  cursor: pointer;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.help,.feedback{
+  color: #ccc;
+  font-size: 13px;
+  /**/
+}
+.help{
+  margin-left: 950px;
+}
+.feedback{
+  margin-left: 10px;
+}
+.help:hover,.feedback:hover{
+  color: #0f77be;
+}
+.register{
+  cursor: pointer;
+  float: right;
+  right: 10px;
+  /*display: inline-block;*/
+  width: 200px;
+}
+.register .l1{
+  /*position: absolute;*/
+  /*top: 8px;*/
+  /*left: 20px;*/
+  /*margin-top: 2px;*/
+  height: 16px;
+  width: 16px;
+  text-align: center;
+  display: inline-block;
+  background: url("admin.png") no-repeat -1px -3px;
+}
+.register .l2{
+  color: white;
+  font-size: 13px;
+}
+.register .l3{
+  width: 8px;
+  height: 5px;
+  display: inline-block;
+  background: url("admin.png") no-repeat -5px -26px;
+}
+.cancel{
+  display: none;
+  cursor: pointer;
+  float: right;
+  /*right: 10px;*/
+  height:35px;
+  line-height: 35px;
+  color: white;
+  background: #424f62;
+  border: 1px solid #273140;
+  border-radius: 5px;
+  /*right: -5px;*/
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  margin-top: 6px;
+  margin-right: 10px;
+  max-width: 300px;
+  min-width: 189px;
+  padding: 0;
+  padding-left: 35px;
+  text-shadow: none;
+}
+.cancel:hover{
+  background: rgb(76,93,118);
+  color: rgb(0,160,234);
+}
+.body{
+  width: 100%;
+  /*height: 100%;*/
+}
+.yushan_left,.yushan_right{
+  float: left;
+}
+.yushan_sidebar {
+  padding-top: 20px;
+  margin-top: 50px;
+  text-align: center;
+  display: block;
+  height: 90.5%;
+  border-top: 1px solid #30394a;
+  padding-bottom: -1px;
+  z-index: 10;
+  width: 10%;
+  background: #354052;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-box-shadow: 0px 5px 8px #a4a4a4;
+  -moz-box-shadow: 0px 5px 8px #a4a4a4;
+  box-shadow: 0px 5px 8px #a4a4a4;
+  min-height: 550px;
+}
+.yushan_sidebar li {
+  cursor: pointer;
+  color: #a0a3aa;
+  /*line-height: 40px;*/
+  display: block;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.yushan_sidebar li .icons {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  background: url(left_icon.png)no-repeat;
+}
+.yushan_sidebar .borders {
+  border-top: 1px solid #273140;
+  border-bottom: 1px solid #3e495a;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.yushan_sidebar li:hover{
+  color: white;
+  background: rgb(66,79,98);
+
+}
+.yushan_left .yushan_sidebar .icon_kb{
+  background-position: -244px -5px;
+}
+
+.yushan_left .yushan_sidebar .icon_gl{
+  background-position: -24px -5px;
+}
+.yushan_left .yushan_sidebar .icon_zt{
+  background-position: -86px -5px;
+}
+.yushan_left .yushan_sidebar .icon_sj{
+  background-position: -147px -5px;
+}
+.yushan_left .yushan_sidebar .icon_ld{
+  background-position: -45px -5px;
+}
+.yushan_left .yushan_sidebar .icon_lc{
+  background-position: -64px -5px;
+}
+.yushan_left .yushan_sidebar .icon_da{
+  background-position: -175px -5px;
+}
+.yushan_left .yushan_sidebar .icon_yh{
+  background-position: -107px -5px;
+}
+.yushan_left .yushan_sidebar .icon_tz{
+  background-position: -198px -5px;
+}
+.yushan_left .yushan_sidebar .icon_yq{
+  background-position: -198px -5px;
+}
+.yushan_right {
+  width:80%;
+  margin-top: 10px;
+  margin-left: 175px;
+  background: #fa3430;
+  height:710px;
+  /*height: 90%;*/
+  padding-left: 140px;
+  /*overflow-y: auto;*/
+  /*min-width: 950px;*/
+  /*overflow-x: auto;*/
+}

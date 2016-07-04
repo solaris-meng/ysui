@@ -1,0 +1,93 @@
+html{font-family:"Î¢ÈíÑÅºÚ",Arial,sans-serif}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td,b,i,strong{padding:0;margin:0;font-family:Microsoft YaHei,sans-serif,Arial}
+strong,b{font-weight: normal;font-size:13px;}
+fieldset,img{border:0}
+a{text-decoration:none;color:#000;outline:none}
+li{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{*font-size:100%}
+.clear:after{
+    display:block;
+    content:"clear";
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clear{zoom:1;}
+/*************************¸Å¿ö*************************************/
+
+table{
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid rgb(232,232,232);
+}
+td,tr{
+    border: 1px solid rgb(232,232,232);
+}
+.jinri{
+    height: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    padding-left: 10px;
+}
+.add,.addnew{
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*width: 16%;*/
+    height: 50px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    /*border-bottom: 2px solid #0099ff;*/
+
+}
+.a1{
+    font-size: 15px;
+    /*font-weight: 700;*/
+}
+.a2{
+    font-size: 33px;
+    font-weight: 700;
+}
+.a3{
+    font-size: 13px;
+    color: red;
+}
+.sanjiao{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    border-left:4px solid transparent ;
+    border-right:4px solid transparent;
+    border-top: 8px solid red;
+}
+.tian{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background:url("add.png") no-repeat;
+    background-position:0 -100px;
+
+}
+.xia{
+    /*display: none;*/
+    position: absolute;
+    display: inline-block;
+    visibility: hidden;
+    /*visibility: visible;*/
+    width: 0;
+    height: 0;
+    /*margin-left: 5px;*/
+    border-left:4px solid transparent ;
+    border-right:4px solid transparent;
+    border-top: 8px solid #0099ff;
+    margin-top: 20px;
+}
+.del{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
