@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="reset.css"/>
+</head>
+<body>
+<div class="title clear">
+    <img src="logo.png" alt="" class="logo"/>
+    <input type="text" readonly="readonly" class="text" value="京北商城"/>
+    <span class="icon"></span>
+    <div class="app-group" id="app_group_div">
+        <div class="app-groupcont">
+            <div class="my-app">
+                我的应用
+
+            </div>
+            <div class="app_list" style="height:300px; overflow:auto;">
+                <ul id="app_list_ul">
+
+                    <li><span class="icon-bookmark"></span>京北商城</li>
+                    <li><span class="icon-bookmark"></span>知乎日报测试</li>
+                    <li><span class="icon-bookmark"></span>资讯类demo</li>
+                    <li><span class="icon-bookmark"></span>电商o2o类demo</li>
+                    <li><span class="icon-bookmark"></span>JS可视化示例</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+    <span class="help">帮助</span>
+    <span class="feedback">反馈</span>
+    <div class="register">
+        <span class="l1">
+        </span>
+        <span class="l2">
+            demo@zhugeio.com
+        </span>
+        <span class="l3">
+
+        </span>
+    </div>
+    <!--<div class="clear"></div>-->
+    <div class="cancel">
+        注销登录
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="body clear">
+    <div class="yushan_left">
+        <ul class="yushan_sidebar" id="left_ul">
+            <a href="./guanjianci_new.html">
+                <li>
+                    <div class="icons icon_kb"></div><p>关键词</p>
+                </li></a>
+            <a href="./index1.html">
+                <li class="active">
+                    <div class="icons icon_gl"></div><p>概览</p>
+                </li></a>
+            <li class="">
+                <div class="icons icon_zt"></div><p>整体</p>
+            </li>
+            <div class="borders"></div>
+            <li class="">
+                <div class="icons icon_sj"></div><p>事件</p>
+            </li>
+            <li class="">
+                <div class="icons icon_ld"></div><p>漏斗</p>
+            </li>
+            <li class="">
+                <div class="icons icon_lc"></div><p>留存</p>
+            </li>
+            <li class="">
+                <div class="icons icon_da"></div><p>用户</p>
+            </li>
+            <li class="">
+                <div class="icons icon_yh"></div><p>分组</p>
+            </li>
+            <li class="">
+                <div class="icons icon_tz"></div><p>推送</p>
+            </li>
+            <div class="borders"></div>
+        </ul>
+    </div>
+    <div class="yushan_right">
+        <table>
+            <tr>
+                <td class="jinri" style="border: 0;">
+                    今日
+                </td>
+            </tr>
+            <tr>
+                <td class="add">
+                    <p class="a1">当日总点击</p>
+                    <p class="a2">6431</p>
+                    <!--<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>-->
+                    <span class="xia"></span>
+                </td>
+                <td class="add">
+                    <p class="a1">当日总下载</p>
+                    <p class="a2">519</p>
+                    <!--<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>-->
+                    <span class="xia"></span>
+                </td>
+                <td class="add">
+                    <p class="a1">Android总下载</p>
+                    <p class="a2">8</p>
+                    <!--<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>-->
+                    <span class="xia"></span>
+                </td>
+                <td class="add">
+                    <p class="a1">iOS总下载</p>
+                    <p class="a2">511</p>
+                    <!--<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>-->
+                    <span class="xia"></span>
+                </td>
+                <td class="add">
+                    <p class="a1">Android总激活</p>
+                    <p class="a2">0</p>
+                    <!--<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>-->
+
+                    <span class="xia"></span>
+                </td>
+                <td class="add">
+                    <p class="a1">Android二次激活</p>
+                    <p class="a2">0</p>
+                    <!--<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>-->
+
+                    <span class="xia"></span>
+                </td>
+                <!-- <td class="addnew">
+                     <span class="tian">
+
+                     </span>
+                 </td>-->
+
+            </tr>
+        </table>
+        <div id="main" style="height:600px;width:99%;margin-top: 10px;"></div>
+        <div class="trend">
+            <p class="trend-top">整体趋势</p>
+            <div class="trend-plan clear">
+                <div class="trend-left clear">
+                    <div id="cost" style="width:100%;height:200px;margin-top:20px;">
+
+                    </div>
+                    <div id="price_per_download" style="width:100%;height:200px;margin-top:20px;">
+
+                    </div>
+                    <div id="click" style="width:100%;height:200px;margin-top:20px;">
+
+                    </div>
+                    <div id="download_ios" style="width:100%;height:200px;margin-top:20px;">
+
+                    </div>
+                    <div id="download_android" style="width:100%;height:200px;margin-top:20px;">
+
+                    </div>
+                </div>
+                <div class="trend-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+//        点击显示隐藏
+        var flag=true;
+        $(".text").click(function(){
+
+            if(flag==true){
+                flag=false;
+                $(".app-group").show();
+            }else{
+                flag=true;
+                $(".app-group").hide();
+            }
+        });
+//        鼠标移上点击出现的效果
+        $("#app_list_ul li").hover(
+                function(){
+                    $(this).css("color","white").css("background","rgb(0,160,234)");
+//                    alert($(this).text())
+                },function(){
+                    $(this).css("color","black").css("background","white");
+                }).click(function(){
+                    $(".text").val($(this).text());
+                })
+//        cancel,register鼠标点击
+        $(".register").click(function(){
+            $(this).hide();
+            $(".cancel").show();
+        });
+        $(".cancel").click(function(){
+            $(this).hide();
+            $(".register").show();
+        })
+//      鼠标移上去
+        $(".yushan_sidebar li").eq(0).hover(
+                function(){
+                    $(".icon_kb").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_kb").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(1).hover(
+                function(){
+                    $(".icon_gl").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_gl").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(2).hover(
+                function(){
+                    $(".icon_zt").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_zt").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(3).hover(
+                function(){
+                    $(".icon_sj").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_sj").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(4).hover(
+                function(){
+                    $(".icon_ld").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_ld").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(5).hover(
+                function(){
+                    $(".icon_lc").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_lc").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(6).hover(
+                function(){
+                    $(".icon_da").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_da").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(7).hover(
+                function(){
+                    $(".icon_yh").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_yh").css("background-position-y","-5px");
+                }
+        );
+        $(".yushan_sidebar li").eq(8).hover(
+                function(){
+                    $(".icon_tz").css("background-position-y","-27px");
+                },
+                function(){
+                    $(".icon_tz").css("background-position-y","-5px");
+                }
+        );
+
+        $(".yushan_sidebar li").eq(0).click(function(){
+//            alert("a");
+            $("#frame").attr("src","./guanjianci.html");
+        });
+        $(".yushan_sidebar li").eq(1).click(function(){
+            $("#frame").attr("src","./gailan.html");
+        })
+    })
+
+</script>
+<script>
+
+    $(".addnew").click(function(){
+        if($(".add").length<5){
+            var html='<td class="add">'+
+                    '<p class="a1">新增用户</p>'+
+                    '<p class="a2">61</p>'+
+                    '<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>'+
+                    '<img src="del.png" alt="" class="del"/>'+
+                    '<span class="xia"></span>'+
+                    '</td>';
+
+            $(this).before(html);
+            move();
+        }else if($(".add").length==5){
+
+            var html= '<p class="a1">新增用户</p>'+
+                    '<p class="a2">61</p>'+
+                    '<p class="a3"><span>-13.6%</span><span class="sanjiao"></span></p>'+
+                    '<img src="del.png" alt="" class="del"/>'+
+                    '<span class="xia"></span>';
+
+            $(this).html(html);
+            $(this).removeClass("addnew");
+            $(this).addClass("add");
+//            $(this).css("background","white");
+            move();
+        }
+        /*$(".del").click(function(){
+         //            console.log($(this))
+         if($(".add").length==6){
+         $(".add").eq($(".add").length-1).html('<span class="tian"></span>').removeClass("add").addClass("addnew");
+         $(".addnew").css("border","0");
+         move();
+         }else{
+         $(this).parent().remove();
+         move();
+         }
+
+         });*/
+    });
+
+
+    function move(){
+        $(".add").mouseover(function(){
+
+//        console.log($(".add").index($(this)))//移动的块的下标
+//        console.log($(".add").length);
+//        if($(".add").index($(this))!=$(".add").length-1){
+            $(this).css("background","white");
+            $(this).css("border-bottom","2px solid #0099ff");
+            $(this).children(".xia").css("visibility","visible");
+//        }
+        });
+        $(".addnew").mouseover(function(){
+            $(this).css("background","rgb(184,196,206)")
+            $(this).children(".tian").css("background-position","0 0");
+        });
+        $(".addnew").mouseout(function(){
+            $(this).css("background","white");
+            $(this).children(".tian").css("background-position","0 -100px");
+        });
+        $(".add").mouseout(function(){
+//        if($(".add").index($(this))!=$(".add").length-1){
+            $(this).css("border-bottom","1px solid rgb(232,232,232)");
+            $(this).children(".xia").css("visibility","hidden");
+//        }
+        })
+    }
+    move();
+
+    //    图
+
+    jQuery(document).ready(function() {
+        /*$.ajax({
+         url: 'http://101.200.130.178/manualtools/accountdays/json/d98f7b1d4bd045e58b13ff711e2b6b84/%E5%96%B5%E6%92%AD',
+         type: 'GET',
+         dataType: 'jsonp',
+         jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+         jsonpCallback:"callBackFun",
+         /!*  timeout: 1000,
+         cache: false,*!/
+         //        beforeSend: LoadFunction, //加载执行方法
+         //        error: erryFunction,  //错误执行方法
+         success: function(a){
+         var json = $.parseJSON(a);
+         console.log(json)
+         //                var $a=eval('('+a+')');
+         //                console.log($a);
+         }//成功执行方法
+         });*/
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+
+        require(
+                [
+                    'echarts',
+                    'echarts/chart/line',
+                    'echarts/chart/k'
+                ],
+                function(ec) {
+
+                    var myChart = ec.init(document.getElementById('main'));
+                    var days = new Array();
+                    days.push('06-21')
+
+                    days.push('06-22')
+
+                    days.push('06-23')
+
+                    days.push('06-24')
+
+                    days.push('06-25')
+
+                    days.push('06-26')
+
+                    days.push('06-27')
+
+                    days.push('06-28')
+
+                    days.push('06-29')
+
+                    days.push('06-30')
+
+                    days.push('07-01')
+
+                    days.push('07-02')
+
+                    days.push('07-03')
+
+                    days.push('07-04')
+
+                    var pvs = [5040, 5824, 7002, 6491, 6251, 6880, 6025, 5414, 5210, 5116, 6431, 6866, 6895, 2853];
+                    var dls = [409, 496, 683, 597, 510, 538, 475, 438, 429, 443, 519, 575, 530, 211];
+                    var ats = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+                    option = {
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        title: {
+                            left: 'center',
+                            text: '喵播 近期总数据'
+                        },
+                        legend: {
+                            data: ['总点击', '总下载', '总激活']
+                        },
+                        toolbox: {
+                            show: false,
+                            feature: {
+                                mark: {show: true},
+                                dataView: {show: true, readOnly: false},
+                                magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                                restore: {show: true},
+                                saveAsImage: {show: true}
+                            }
+                        },
+                        calculable: true,
+                        xAxis: [
+                            {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: days
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'value'
+                            }
+                        ],
+                        series: [
+                            {
+                                name: '总点击',
+                                type: 'line',
+                                line: '总量',
+                                data: pvs
+                            },
+                            {
+                                name: '总下载',
+                                type: 'line',
+                                line: '总量',
+                                data: dls
+                            },
+                            {
+                                name: '总激活',
+                                type: 'line',
+                                line: '总量',
+                                data: ats
+                            }
+                        ]
+                    };
+                    myChart.setOption(option);
+                }
+        );
+    });
+</script>
+<script>
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
+
+    require(
+            [
+                'echarts',
+                'echarts/chart/line',
+                'echarts/chart/k'
+            ],
+            function(ec) {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart1 = ec.init(document.getElementById('cost'));
+                var myChart2 = ec.init(document.getElementById('price_per_download'));
+                var myChart3 = ec.init(document.getElementById('click'));
+                var myChart4 = ec.init(document.getElementById('download_ios'));
+                var myChart5 = ec.init(document.getElementById('download_android'));
+
+                var words = new Array();
+                var costs = new Array();
+                var price_per_download = new Array();
+                var click = new Array();
+                var download_ios = new Array();
+                var download_android = new Array();
+
+
+                words.push('在线直播观看')
+                costs.push('184.18')
+                price_per_download.push('46.045')
+                click.push('317')
+                download_ios.push('4')
+                download_android.push('0')
+
+                words.push('直播间')
+                costs.push('173.36')
+                price_per_download.push('8.255')
+                click.push('408')
+                download_ios.push('21')
+                download_android.push('0')
+
+                words.push('手机在线直播')
+                costs.push('106.81')
+                price_per_download.push('35.603')
+                click.push('292')
+                download_ios.push('3')
+                download_android.push('0')
+
+                words.push('直播平台')
+                costs.push('89.45')
+                price_per_download.push('5.591')
+                click.push('112')
+                download_ios.push('16')
+                download_android.push('0')
+
+                words.push('怎么和女生聊天')
+                costs.push('87.03')
+                price_per_download.push('8.703')
+                click.push('146')
+                download_ios.push('10')
+                download_android.push('0')
+
+                words.push('视频聊天社区')
+                costs.push('79.16')
+                price_per_download.push('15.832')
+                click.push('159')
+                download_ios.push('5')
+                download_android.push('0')
+
+                words.push('恋夜秀场')
+                costs.push('68.25')
+                price_per_download.push('13.650')
+                click.push('120')
+                download_ios.push('5')
+                download_android.push('0')
+
+                words.push('有什么直播平台')
+                costs.push('65.44')
+                price_per_download.push('7.271')
+                click.push('91')
+                download_ios.push('9')
+                download_android.push('0')
+
+                words.push('视频直播间')
+                costs.push('60.23')
+                price_per_download.push('5.019')
+                click.push('107')
+                download_ios.push('12')
+                download_android.push('0')
+
+                words.push('在线直播视频')
+                costs.push('57.21')
+                price_per_download.push('14.303')
+                click.push('105')
+                download_ios.push('4')
+                download_android.push('0')
+
+
+                option1 = {
+                    title:{
+                        text:"消费",
+                        x:"20",
+                        y:"center",
+                        subtext:"消费"
+                    },
+                    grid:{
+                        x:"160",
+//            y:"100",
+//            width:'100%',
+                        height:'100px',
+                        borderWidth:'1px',
+                        borderColor:"#ccc"
+                    },
+                    /*dataZoom : {
+                     show : true,
+                     realtime : true,
+                     //orient: 'vertical',   // 'horizontal'
+                     //x: 0,
+                     y: 36,
+                     //width: 400,
+                     height: 20,
+                     backgroundColor: 'rgba(221,160,221,0.5)',
+                     dataBackgroundColor: 'rgba(138,43,226,0.5)',
+                     fillerColor: 'rgba(38,143,26,0.6)',
+                     handleColor: 'rgba(128,43,16,0.8)',
+                     //xAxisIndex:[],
+                     //yAxisIndex:[],
+                     start : 40,
+                     end : 60
+                     },*/
+                    /* tooltip: {
+                     trigger: 'axis',
+
+                     },*/
+                    tooltip : {
+                        trigger: 'axis',
+                        //show: true,   //default true
+                        showDelay: 0,
+                        hideDelay: 50,
+                        transitionDuration: 0,
+                        backgroundColor: 'rgba(155,0,155,0.7)',
+                        borderColor: '#fff',
+                        borderRadius: 8,
+                        borderWidth: 2,
+                        padding: 10,    // [5, 10, 15, 20]
+                        textStyle: {
+                            color: 'yellow',
+                            decoration: 'none',
+                            fontFamily: 'Verdana, sans-serif',
+                            fontSize: 15,
+                            fontStyle: 'italic',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap : false,
+                            data: words
+                            /*textStyle:{
+                             color:"blue",
+                             fontSize:"12px",
+                             fontStyle:"italic"
+                             }*/
+                        }
+                    ],
+                    /*axis:{
+                     splitLine:{
+                     show:false
+                     },
+                     axisLine:{
+                     show:false
+                     }
+                     },*/
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '消费',
+                            axisLabel: {
+                                formatter: '{value} 元'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name:'消费',
+                            type:'line',
+                            data:costs
+                        },
+                    ]
+                };
+                option2 = {
+                    title:{
+                        text:"下载成本",
+                        x:"20",
+                        y:"center",
+                        subtext:"下载成本"
+                    },
+                    grid:{
+                        x:"160",
+//            width:'100%',
+                        height:'100px',
+                        borderWidth:'1px',
+                        borderColor:"#ccc"
+                    },
+
+                    tooltip : {
+                        trigger: 'axis',
+                        //show: true,   //default true
+                        showDelay: 0,
+                        hideDelay: 50,
+                        transitionDuration: 0,
+                        backgroundColor: 'rgba(155,0,155,0.7)',
+                        borderColor: '#fff',
+                        borderRadius: 8,
+                        borderWidth: 2,
+                        padding: 10,    // [5, 10, 15, 20]
+                        textStyle: {
+                            color: 'yellow',
+                            decoration: 'none',
+                            fontFamily: 'Verdana, sans-serif',
+                            fontSize: 15,
+                            fontStyle: 'italic',
+                            fontWeight: 'bold'
+                        }
+                    },
+
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap : false,
+                            data: words
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '下载成本',
+                            axisLabel: {
+                                formatter: '{value} 元'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name:'消费',
+                            type:'line',
+                            data: price_per_download
+                        },
+                    ]
+                };
+                option3 = {
+                    title:{
+                        text:"点击",
+                        x:"20",
+                        y:"center",
+                        subtext:"点击"
+                    },
+                    grid:{
+                        x:"160",
+//            width:'100%',
+                        height:'100px',
+                        borderWidth:'1px',
+                        borderColor:"#ccc"
+                    },
+
+                    tooltip : {
+                        trigger: 'axis',
+                        //show: true,   //default true
+                        showDelay: 0,
+                        hideDelay: 50,
+                        transitionDuration: 0,
+                        backgroundColor: 'rgba(155,0,155,0.7)',
+                        borderColor: '#fff',
+                        borderRadius: 8,
+                        borderWidth: 2,
+                        padding: 10,    // [5, 10, 15, 20]
+                        textStyle: {
+                            color: 'yellow',
+                            decoration: 'none',
+                            fontFamily: 'Verdana, sans-serif',
+                            fontSize: 15,
+                            fontStyle: 'italic',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap : false,
+                            data: words
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '点击',
+                            axisLabel: {
+                                formatter: '{value} 元'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name:'消费',
+                            type:'line',
+                            data: click
+                        },
+                    ]
+                };
+                option4 = {
+                    title:{
+                        text:"IOS下载",
+                        x:"20",
+                        y:"center",
+                        subtext:"IOS下载"
+                    },
+                    grid:{
+                        x:"160",
+//            width:'100%',
+                        height:'100px',
+                        borderWidth:'1px',
+                        borderColor:"#ccc"
+                    },
+
+                    tooltip : {
+                        trigger: 'axis',
+                        //show: true,   //default true
+                        showDelay: 0,
+                        hideDelay: 50,
+                        transitionDuration: 0,
+                        backgroundColor: 'rgba(155,0,155,0.7)',
+                        borderColor: '#fff',
+                        borderRadius: 8,
+                        borderWidth: 2,
+                        padding: 10,    // [5, 10, 15, 20]
+                        textStyle: {
+                            color: 'yellow',
+                            decoration: 'none',
+                            fontFamily: 'Verdana, sans-serif',
+                            fontSize: 15,
+                            fontStyle: 'italic',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap : false,
+                            data: words
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: 'IOS下载',
+                            axisLabel: {
+                                formatter: '{value} 元'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name:'消费',
+                            type:'line',
+                            data: download_ios
+                        }
+                    ]
+                };
+                option5 = {
+                    title:{
+                        text:"Android下载",
+                        x:"20",
+                        y:"center",
+                        subtext:"Android下载"
+                    },
+                    grid:{
+                        x:"160",
+//            width:'100%',
+                        height:'100px',
+                        borderWidth:'1px',
+                        borderColor:"#ccc"
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        //show: true,   //default true
+                        showDelay: 0,
+                        hideDelay: 50,
+                        transitionDuration: 0,
+                        backgroundColor: 'rgba(155,0,155,0.7)',
+                        borderColor: '#fff',
+                        borderRadius: 8,
+                        borderWidth: 2,
+                        padding: 10,    // [5, 10, 15, 20]
+                        textStyle: {
+                            color: 'yellow',
+                            decoration: 'none',
+                            fontFamily: 'Verdana, sans-serif',
+                            fontSize: 15,
+                            fontStyle: 'italic',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap : false,
+                            data: words
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: 'Android下载',
+                            axisLabel: {
+                                formatter: '{value} 元'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name:'消费',
+                            type:'line',
+                            data: download_android
+                        },
+                    ]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart1.setOption(option1);
+                myChart2.setOption(option2);
+                myChart3.setOption(option3);
+                myChart4.setOption(option4);
+                myChart5.setOption(option5);
+            }
+    );
+</script>
+</body>
+</html>
