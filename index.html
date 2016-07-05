@@ -52,7 +52,7 @@
     <div class="yushan_left">
         <ul class="yushan_sidebar" id="left_ul">
             <li>
-                    <div class="icons icon_kb"></div><p>看板</p>
+                    <div class="icons icon_kb"></div><p>关键词</p>
             </li>
             <li class="active">
                     <div class="icons icon_gl"></div><p>概览</p>
@@ -194,9 +194,15 @@
                 function(){
                     $(".icon_tz").css("background-position-y","-5px");
                 }
-        )
+        );
 
-
+        $(".yushan_sidebar li").eq(0).click(function(){
+//            alert("a");
+            $("#frame").attr("src","./guanjianci.html");
+        });
+        $(".yushan_sidebar li").eq(1).click(function(){
+            $("#frame").attr("src","./gailan.html");
+        })
     })
 
 </script>

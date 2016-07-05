@@ -1,0 +1,45 @@
+html{font-family:"微软雅黑",Arial,sans-serif}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td,b,i,strong{padding:0;margin:0;font-family:Microsoft YaHei,sans-serif,Arial}
+strong,b{font-weight: normal;font-size:13px;}
+fieldset,img{border:0}
+a{text-decoration:none;color:#000;outline:none}
+li{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{*font-size:100%}
+.clear:after{
+    display:block;
+    content:"clear";
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clear{zoom:1;}
+/*************************概况*************************************/
+
+/*整体趋势*/
+.trend{
+    margin-top: 10px;
+    width: 99%;
+    border: 1px solid rgb(232,232,232);
+}
+.trend-top{
+    border: 1px solid rgb(232,232,232);
+    text-indent:20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: 700;
+}
+.trend-plan{
+    border-left: 1px solid rgb(232,232,232);
+    border-right: 1px solid rgb(232,232,232);
+}
+.trend-left,.trend-right{
+    float: left;
+}
+.trend-left{
+    width: 80%;
+}
+.trend-right{
+    /*width:20%;*/
+}
