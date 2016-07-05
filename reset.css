@@ -261,3 +261,6 @@ input,button,textarea,select{*font-size:100%}
   /*min-width: 950px;*/
   /*overflow-x: auto;*/
 }
+#frame{
+  margin-left: 10%;
+}
