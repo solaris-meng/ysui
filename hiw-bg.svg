@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="320px" height="60px" viewBox="0 0 320 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D4FF14" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="首页" sketch:type="MSArtboardGroup" transform="translate(0.000000, -1645.000000)" fill="url(#linearGradient-1)" opacity="0.2">
+            <g id="Rectangle-10-+-Triangle-1-+-我们提供的，不只是数据分析，而是专属于你" sketch:type="MSLayerGroup" transform="translate(0.000000, 1555.000000)">
+                <path d="M127,150 L-25.9623356,150 L42,114 L82.3728749,134.315753 L122.74575,107.208877 L163.118625,128.500698 L203.4915,119.339628 L243.864374,133.447966 L284.237249,119.339627 L326.501938,85.0843135 L365,150 L259.518832,150 L127,150 Z" id="Triangle-1" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

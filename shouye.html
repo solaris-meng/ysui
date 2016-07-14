@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/normalize/4.1.0/normalize.min.css"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html{font-family:"微软雅黑",Arial,sans-serif}
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td,b,i,strong{padding:0;margin:0;font-family:Microsoft YaHei,sans-serif,Arial;list-style: none}
+        strong,b{font-weight: normal;font-size:13px;}
+        fieldset,img{border:0}
+        a{text-decoration:none;color:#000;outline:none}
+        li{list-style:none}
+        h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+        input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+        input,button,textarea,select{*font-size:100%}
+        .clear:after{
+            display:block;
+            content:"clear";
+            height:0;
+            clear:both;
+            visibility:hidden;
+        }
+        .clear{zoom:1;}
+        .nav{
+
+            /*background: rgb(9,178,116);*/
+
+            position: fixed;
+            top:0;
+            left: 0;;
+            min-width: 100%;
+            overflow: hidden;
+            height:60px;
+            line-height:60px;
+            z-index: 100;
+        }
+        .logo{
+            float: left;
+            width: 50px;
+            margin-top: 15px;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+        .nav li{
+            cursor: pointer;
+            float: right;
+            color: #b2ffe7;
+            margin-right: 50px;
+        }
+        .nav ul{
+            float:left;
+            margin-left: 50%;
+        }
+        .sign{
+            /*float: right;*/
+            height: 50px;
+            line-height: 50px;
+            display: inline-block;
+            padding: 0px 25px;
+            border: 1px solid #fff;
+            background: rgba(255,255,255,.15);
+            color: #fff;
+            border-radius:2px;
+        }
+        .sign:hover,.use span:hover{
+            border: 1px solid #fff;
+            background: rgba(255,255,255,0);
+        }
+        .up{
+            overflow: hidden;
+            width: 100%;
+            height: 600px;
+            background: rgb(9,178,116) url("head-bg.svg") no-repeat;
+            background-size: 100%;
+            background-position: 0 300px;
+        }
+        .up h3{
+            font-size: 35px;
+            color: #b2ffe7;
+            text-align: center;
+            /*margin-top:70px;*/
+            margin-top:100px;
+        }
+        .private{
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 5px;
+            margin-top: 20px;
+            /*opacity: 0;*/
+            -webkit-animation: open 1s ease-in-out;
+            -moz-animation: open 1s ease-in-out;
+            animation: open 1s ease-in-out;
+        }
+        @-webkit-keyframes open{
+            0%{ opacity: 0;-webkit-transform:scale(.3);margin-top:60px;}
+            100% { opacity: 1;-webkit-transform:scale(1);margin-top: 20px;}
+        }
+        .renav,.renav1{
+           /*padding-top: 5px;*/
+            display: inline-block;
+            width:200px;
+            height:50px;
+            line-height:50px;
+            overflow:hidden;
+            background:#FFFFFF;
+            background:rgba(255,255,255,0);
+            border-bottom: 1px solid #b2ffe7;
+        }
+        .renav li,.renav1 li{
+            margin-top:5px;
+            color: white;
+            height:50px;
+            line-height: 50px;
+        }
+        .renav li a,.renav1 li a{
+            color: white;
+        }
+        .notonly{
+            color:#b2ffe7 ;
+            font-size: 30px;
+            display: block;
+            /*margin: 20px auto;*/
+            text-align: center;
+            margin-top:30px;
+        }
+        .notonly span{
+            margin-bottom: 10px;
+        }
+        .use{
+            text-align: center;
+            margin-top:110px;
+        }
+        .use span{
+            cursor: pointer;
+            font-size: 28px;
+            padding: 20px 40px;
+            color: white;
+            border: 1px solid #fff;
+            border-radius: 2px;
+            background: rgba(255,255,255,.15);
+        }
+        .arr1,.arr2,.arr3{
+            float: left;
+            width: 400px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .arr1 img,.arr2 img,.arr3 img{
+            width: 100%;
+        }
+        .arr1 p,.arr2 p,.arr3 p{
+           margin-top: 50px;
+        }
+        .arrange{
+            width: 1350px;
+            margin: 50px auto;
+        }
+        .bold{
+            font-weight: 500;
+            font-size: 22px;
+        }
+        .write{
+            text-align: left;
+            color: #63716C;
+            letter-spacing: 1px;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .look{
+            margin-top: 120px;
+            margin-bottom: 100px;
+        }
+        .shen{
+            display: inline-block;
+            padding: 5px 20px;
+            cursor: pointer;
+            color:#00B27A;;
+            border: 1px solid #00B27A;;
+            border-radius: 2px;
+            background: rgb(255,255,255);
+        }
+        .shen:hover{
+            background: #b2ffe7;
+        }
+        .offer{
+            width: 100%;
+            height: 350px;
+            background: rgb(9,178,116) url("hiw-bg.svg") no-repeat;
+            background-size: 100%;
+            background-position: 0 70px;
+            margin-bottom: 100px;
+        }
+        .offer .offer-1{
+            /*margin-top: 50px;*/
+            padding-top: 100px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+        .offer .offer-2{
+            /*margin-top: 50px;*/
+            margin-top: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 300;
+            /*letter-spacing: 2px;*/
+            color: #fff;
+        }
+        .offer .offer-3{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .caiji,.caijitu{
+            float: left;
+        }
+        .caiji{
+            margin-left: 15%;
+            width: 35%;
+            margin-right: 5%;
+        }
+        .caijitu{
+            width:30%;
+        }
+        .caijitu img{
+            width: 100%;
+        }
+
+        .biao{
+            font-size: 30px;
+            font-weight: 300;
+            color: #00B27A;
+            text-align: left;
+        }
+        .more{
+            font-size: 20px;
+            font-weight: 300;
+            color: #63716C;
+            margin-top: 20px;
+            letter-spacing: .1px;
+            line-height: 28px;
+            text-align: left;
+        }
+        .z{
+            /*margin-top: 200px;*/
+            margin-bottom: 100px;
+            width: 80%;
+            margin-left: 10%;
+        }
+        .z li{
+            text-align: center;
+            float: left;
+            list-style: none;
+            background-size: auto 60px;
+            background-repeat: no-repeat;
+            background-position: center;
+            outline: #eee solid 1px;
+            outline-offset: 4px;
+            opacity: .8;
+            width: 150px;
+            height: 70px;
+            margin: 10px 0 10px 25px;
+            overflow: hidden;
+            -webkit-transition: opacity .2s;
+            transition: opacity .2s;
+        }
+        .z li img{
+            width: auto;
+            height: 60px;
+        }
+        .foot{
+            width: 100%;
+            /*height: 200px;*/
+            background: #00B27A;
+            color: #fff;
+        }
+        .foot p{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav clear">
+        <img src="logo.png" alt="" class="logo"/>
+        <ul class="clear">
+            <li>关于</li>
+            <li>Demo</li>
+            <li>文档</li>
+            <li>视频</li>
+            <li>博客</li>
+        </ul>
+        <!--<div class="clear"></div>-->
+        <button class="sign">申请试用</button>
+    </div>
+    <div class="up">
+        <h3>神策分析</h3>
+        <p class="private">可以私有化部署的用户行为分析产品</p>
+        <span class="notonly">
+            <span>不止于</span>
+            <div class="renav">
+                <ul style="margin-top: 0px;">
+                    <li><a>a</a></li>
+                    <li><a>b</a></li>
+                    <li><a>未添加1</a></li>
+                    <li><a>未添加2</a></li>
+                    <li><a>未添加3</a></li>
+                    <li><a>未添加4</a></li>
+                    <li><a>b</a></li>
+                    <li><a>b</a></li>
+                </ul>
+            </div>
+            <span>，更是</span>
+            <div class="renav1">
+                <ul style="margin-top: 0px;">
+                    <li><a>a</a></li>
+                    <li><a>b</a></li>
+                    <li><a>未添加1</a></li>
+                    <li><a>未添加2</a></li>
+                    <li><a>未添加3</a></li>
+                    <li><a>未添加4</a></li>
+                    <li><a>b</a></li>
+                    <li><a>b</a></li>
+                </ul>
+            </div>
+            <span>。</span>
+        </span>
+        <p class="use">
+            <span>
+                申请试用
+            </span>
+        </p>
+    </div>
+    <div class="body" id="body">
+       <!-- <div data-scroll-reveal class="wow swing" data-wow-delay="1s"><img src="private@2x.png" alt=""/></div>
+        <div data-scroll-reveal class="wow slideInLeft"><img src="private@2x.png" alt=""/></div>
+        <div data-scroll-reveal class="wow slideInLeft"><img src="private@2x.png" alt=""/></div>-->
+        <div class="arrange clear">
+            <div class="arr1">
+                <p class="wow slideInLeft" data-wow-offset="300"><img src="private@2x.png" alt=""/></p>
+                <p class="bold wow slideInLeft">私有部署，数据无忧</p>
+                <p class="write wow slideInLeft">提供开放的查询 API 和完整的 SQL 接口，同时与 MapReduce 和 Spark 等计算引擎无缝融合，随时以最高效的方式来访问干净、规范的数据。</p>
+            </div>
+            <div class="arr2">
+                <p class="wow zoomIn"  data-wow-offset="300" data-wow-duration="2s"><img src="private@2x.png" alt=""/></p>
+
+                <p class="wow bold zoomIn" data-wow-duration="2s">私有部署，数据无忧</p>
+                <p class="wow write zoomIn" data-wow-duration="2s">提供开放的查询 API 和完整的 SQL 接口，同时与 MapReduce 和 Spark 等计算引擎无缝融合，随时以最高效的方式来访问干净、规范的数据。</p>
+            </div>
+            <div class="arr3">
+                <p class="wow slideInRight"  data-wow-offset="300"><img src="private@2x.png" alt=""/></p>
+                <p class="wow bold slideInRight">私有部署，数据无忧</p>
+                <p class="wow write slideInRight">提供开放的查询 API 和完整的 SQL 接口，同时与 MapReduce 和 Spark 等计算引擎无缝融合，随时以最高效的方式来访问干净、规范的数据。</p>
+            </div>
+        </div>
+        <div class="arrange clear">
+            <div class="arr1">
+                <p class="wow slideInLeft"><img src="private@2x.png" alt=""/></p>
+                <p class="wow bold slideInLeft">私有部署，数据无忧</p>
+                <p class="wow write slideInLeft">提供开放的查询 API 和完整的 SQL 接口，同时与 MapReduce 和 Spark 等计算引擎无缝融合，随时以最高效的方式来访问干净、规范的数据。</p>
+            </div>
+            <div class="arr2">
+                <p class="wow zoomIn" data-wow-duration="1s"><img src="private@2x.png" alt=""/></p>
+
+                <p class="wow bold zoomIn" data-wow-duration="1s">私有部署，数据无忧</p>
+                <p class="wow write zoomIn" data-wow-duration="1s">提供开放的查询 API 和完整的 SQL 接口，同时与 MapReduce 和 Spark 等计算引擎无缝融合，随时以最高效的方式来访问干净、规范的数据。</p>
+            </div>
+            <div class="arr3">
+                <p class="wow slideInRight"><img src="private@2x.png" alt=""/></p>
+                <p class="wow bold slideInRight">私有部署，数据无忧</p>
+                <p class="wow write slideInRight">提供开放的查询 API 和完整的 SQL 接口，同时与 MapReduce 和 Spark 等计算引擎无缝融合，随时以最高效的方式来访问干净、规范的数据。</p>
+            </div>
+        </div>
+        <div class="look">
+            <p style="text-align: center;font-size: 20px;">眼见为实，立即上手使用</p>
+            <p style="text-align: center;font-size: 20px;margin-top: 50px;">
+                <span class="shen">申请试用</span>
+            </p>
+        </div>
+        <div class="offer">
+            <p class="offer-1">我们提供的不止于数据分析工具，更是专属于你的完整数据解决方案。帮你沉淀数据资产。</p>
+            <p class="offer-2">了解 Sensors Analytics 如何工作</p>
+            <p class="offer-3">
+                <img src="triangle-down.png" class="wow zoomIn" alt=""/>
+            </p>
+        </div>
+        <div class="supply">
+            <div class="clear" style="margin-bottom:100px" data-wow-delay="0.5s">
+                <div class="caiji wow zoomIn" data-wow-offset="200">
+                    <p class="biao">
+                        <span style="display: inline-block;width:40px;height:40px;border-radius: 100%;border:2px solid #00B27A;line-height: 40px;text-align: center;margin-right: 10px;">1</span>采集用户行为数据
+                    </p>
+                    <p class="more">记录多种数据源，不同终端（Web、App、H5、桌面软件）用户行为，后端系统日志（Web server Log），业务数据( DB )，无一遗漏，全端打通。</p>
+                </div>
+                <div class="caijitu wow zoomIn" data-wow-offset="200" data-wow-delay="0.6s">
+                    <img src="collect.png" alt=""/>
+                </div>
+            </div>
+            <div class="clear" style="margin-bottom:100px" data-wow-delay="0.5s">
+                <div class="caiji wow zoomIn">
+                    <p class="biao">
+                        <span style="display: inline-block;width:40px;height:40px;border-radius: 100%;border:2px solid #00B27A;line-height: 40px;text-align: center;margin-right: 10px;">2</span>采集用户行为数据
+                    </p>
+                    <p class="more">记录多种数据源，不同终端（Web、App、H5、桌面软件）用户行为，后端系统日志（Web server Log），业务数据( DB )，无一遗漏，全端打通。</p>
+                </div>
+                <div class="caijitu wow zoomIn" data-wow-delay="0.6s">
+                    <img src="collect.png" alt=""/>
+                </div>
+            </div>
+            <div class="clear" style="margin-bottom:100px" data-wow-delay="0.5s">
+                <div class="caiji wow zoomIn">
+                    <p class="biao">
+                        <span style="display: inline-block;width:40px;height:40px;border-radius: 100%;border:2px solid #00B27A;line-height: 40px;text-align: center;margin-right: 10px;">3</span>采集用户行为数据
+                    </p>
+                    <p class="more">记录多种数据源，不同终端（Web、App、H5、桌面软件）用户行为，后端系统日志（Web server Log），业务数据( DB )，无一遗漏，全端打通。</p>
+                </div>
+                <div class="caijitu wow zoomIn" data-wow-delay="0.6s">
+                    <img src="collect.png" alt=""/>
+                </div>
+            </div>
+            <div class="clear" style="margin-bottom: 100px" data-wow-delay="0.5s">
+                <div class="caiji wow zoomIn" >
+                    <p class="biao">
+                        <span style="display: inline-block;width:40px;height:40px;border-radius: 100%;border:2px solid #00B27A;line-height: 40px;text-align: center;margin-right: 10px;">4</span>采集用户行为数据
+                    </p>
+                    <p class="more">记录多种数据源，不同终端（Web、App、H5、桌面软件）用户行为，后端系统日志（Web server Log），业务数据( DB )，无一遗漏，全端打通。</p>
+                </div>
+                <div class="caijitu wow zoomIn" data-wow-delay="0.6s">
+                    <img src="collect.png" alt=""/>
+                </div>
+            </div>
+        </div>
+        <p style="color: #0AA372;margin-bottom: 50px;margin-top:100px;font-size:30px;font-weight: 300;text-align: center;">他们正在使用 Sensors Analytics</p>
+        <div class="z">
+            <ul class="clear">
+                <li title="" data-toggle="tooltip" data-original-title="36氪">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="AcFun">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="秒拍">
+                    <img src="miaopai.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="金山">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="多盟">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="ONE APM">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="杏树林">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="住百家">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="APUS">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="极客学院" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="爱鲜蜂" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="车来了" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="51offer" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="一亩田">
+                    <img src="yimutian.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="黄金钱包">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="葡萄串">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="大特保">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="PP租车" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="石墨" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="英语魔方秀" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="油联石化">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="淘手游">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="杭州玩啊">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="棒棒糖">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="薄荷科技" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="盒子鱼" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="鉴鉴" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="蒲公英">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="梅子桃源" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="文玩迷">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="" data-toggle="tooltip" data-original-title="鲜柚">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="掌管生活" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+                <li title="章鱼彩票" data-toggle="tooltip">
+                    <img src="beequick.png" alt=""/>
+                </li>
+
+            </ul>
+        </div>
+        <div class="look">
+            <p style="text-align: center;font-size: 20px;color: #0AA372;">加入他们，成为真正数据驱动的企业</p>
+            <p style="text-align: center;font-size: 20px;margin-top: 50px;">
+                <span class="shen">申请试用</span>
+            </p>
+        </div>
+        <div class="foot">
+            <p style="padding-top: 50px;font-size: 20px;">联系我们：contact@sensorsdata.cn 电话：4006509827</p>
+            <p style="font-size: 20px;">地址：北京市清华同方科技广场 D 座东楼 803</p>
+            <p style="color: #C3E6D0;padding-bottom: 50px;font-size: 18px;margin-top: 10px;">&copy; Sensors Data 205－2016 | Terms, Conditions and Privacy Policy | 京ICP备15055677号</p>
+        </div>
+    </div>
+
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--<script src="http://cdn.bootcss.com/scrollReveal.js/3.2.0/scrollreveal.js"></script>-->
+    <script src="http://cdn.bootcss.com/wow/1.1.1/wow.min.js"></script>
+    <!--<script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>-->
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () { $("[data-toggle='tooltip']").tooltip(); });
+        new WOW().init();
+//        window.scrollReveal = new ScrollReveal({elem: document.getElementById('body')});
+//        scrollReveal._init()
+        //或者，elem 为动画元素的任何级别的父元素
+//        window.scrollReveal2 = new ScrollReveal({elem: document.getElementById('body')});
+        $(".nav li").hover(function(){
+            $(this).css("color","#fff")
+        },function(){
+            $(this).css("color","#b2ffe7")
+        })
+        $(window).scroll(function(){
+            var s=$(window).scrollTop();
+           if(s>540){
+               $(".nav").css("background","rgb(9,178,116)");
+           }else{
+               $(".nav").css("background","rgba(255,255,255,0)");
+           }
+                console.log(s);
+            })
+
+        $(function(){
+            var $this = $(".renav");
+            var $this1 = $(".renav1");
+            var scrollTimer;
+            var scrollTimer1;
+            $this.hover(function(){
+                clearInterval(scrollTimer);
+            },function(){
+                scrollTimer = setInterval(function(){
+                    scrollNews( $this );
+                },1000 );
+            }).trigger("mouseout");
+            $this1.hover(function(){
+                clearInterval(scrollTimer1);
+            },function(){
+                scrollTimer1 = setInterval(function(){
+                    scrollNews( $this1 );
+                },1000 );
+            }).trigger("mouseout");
+        });
+        function scrollNews(obj){
+            var $self = obj.find("ul:first");
+            var lineHeight = $self.find("li:first").height()+5;
+            $self.animate({ "margin-top" : -lineHeight +"px" },200 , function(){
+                $self.css({"margin-top":"0px"}).find("li:first").appendTo($self);
+            })
+        }
+
+    </script>
+</body>
+</html>
