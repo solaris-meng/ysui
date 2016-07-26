@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+    margin:50px 0 50px 0;
+}
+.create{
+    color: #696969;
+    width: 800px;
+    margin: 0 auto 50px;
+
+}
+.create p{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.ios{
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 100px;
+}
+.qu{
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 160px;
+}
+.clk{
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 3px;
+}
+.lian{
+    margin-left: 100px;
+}
+

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./reset.css"/>
+    <link rel="stylesheet" href="./active.css"/>
+    <title></title>
+</head>
+<body>
+<h1>iOS渠道激活查看</h1>
+<div id="main" style="height:600px;width:80%;margin: 10px auto;"></div>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script>
+
+    //    图
+
+    jQuery(document).ready(function() {
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+
+        require(
+                [
+                    'echarts',
+                    'echarts/chart/line',
+                    'echarts/chart/k'
+                ],
+                function(ec) {
+
+                    var myChart = ec.init(document.getElementById('main'));
+                    var hours = ['00', '01', '02', '03'];
+
+
+    option = {
+        tooltip: {
+            trigger: 'axis'
+        },
+        title: {
+            left: 'center',
+            text: 'iOS渠道激活查看'
+        },
+        legend: {
+            data: ['总展现', '总下载', '总激活', '总消费']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        calculable: true,
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: hours,
+                axisLine : {    // 轴线
+                    show: true,
+                    lineStyle: {
+                        color: 'green',
+                        type: 'solid',
+                        width: 2
+                    }
+                },
+                axisTick : {    // 轴标记
+                    show:true,
+                    length: 10,
+                    lineStyle: {
+                        color: 'red',
+                        type: 'solid',
+                        width: 2
+                    }
+                },
+                axisLabel : {
+                    show:true,
+                    interval: 'auto',    // {number}
+                    rotate: 45,
+                    margin: 8,
+                    textStyle: {
+                        color: 'blue',
+                        fontFamily: 'sans-serif',
+                        fontSize: 13,
+                        fontStyle: 'italic',
+                        fontWeight: 'bold'
+                    }
+                },
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#483d8b',
+                        type: 'dashed',
+                        width: 1
+                    }
+                },
+                splitArea : {
+                    show: true,
+                    areaStyle:{
+                        color:['rgba(144,238,144,0.3)','rgba(135,200,250,0.3)']
+                    }
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLine : {    // 轴线
+                    show: true,
+                    lineStyle: {
+                        color: 'red',
+                        type: 'dashed',
+                        width: 2
+                    }
+                },
+                axisTick : {    // 轴标记
+                    show:true,
+                    length: 10,
+                    lineStyle: {
+                        color: 'green',
+                        type: 'solid',
+                        width: 2
+                    }
+                },
+                axisLabel : {
+                    show:true,
+                    interval: 'auto',    // {number}
+                    rotate: -45,
+                    margin: 18,
+                    textStyle: {
+                        color: '#1e90ff',
+                        fontFamily: 'verdana',
+                        fontSize: 10,
+                        fontStyle: 'normal',
+                        fontWeight: 'bold'
+                    }
+                },
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#483d8b',
+                        type: 'dotted',
+                        width: 2
+                    }
+                },
+                splitArea : {
+                    show: true,
+                    areaStyle:{
+                        color:['rgba(205,92,92,0.3)','rgba(255,215,0,0.3)']
+                    }
+                }
+            }
+        ],
+        series: [
+            {
+                name: '总展现',
+                type: 'line',
+                line: '总量',
+                data: ['1','2','10','50'],
+                symbolSize: 6,
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        },
+                        lineStyle: {            // 系列级个性化折线样式，横向渐变描边
+                            width: 2,
+                            shadowColor : 'rgba(0,0,0,0.5)',
+                            shadowBlur: 10,
+                            shadowOffsetX: 8,
+                            shadowOffsetY: 8
+                        }
+                    },
+                    emphasis : {
+                        label : {show: true}
+                    }
+                }
+            },
+            {
+                name: '总下载',
+                type: 'line',
+                line: '总量',
+                data: ['5','77','5','8'],
+                symbolSize: 6,
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        },
+                        lineStyle: {            // 系列级个性化折线样式，横向渐变描边
+                            width: 2,
+                            shadowColor : 'rgba(0,0,0,0.5)',
+                            shadowBlur: 10,
+                            shadowOffsetX: 8,
+                            shadowOffsetY: 8
+                        }
+                    },
+                    emphasis : {
+                        label : {show: true}
+                    }
+                }
+            },
+            {
+                name: '总激活',
+                type: 'line',
+                line: '总量',
+                data: ['15','17','35','57'],
+                symbolSize: 6,
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        },
+                        lineStyle: {            // 系列级个性化折线样式，横向渐变描边
+                            width: 2,
+                            shadowColor : 'rgba(0,0,0,0.5)',
+                            shadowBlur: 10,
+                            shadowOffsetX: 8,
+                            shadowOffsetY: 8
+                        }
+                    },
+                    emphasis : {
+                        label : {show: true}
+                    }
+                }
+            },
+            {
+                name: '总消费',
+                type: 'line',
+                line: '总量',
+                data: ['20','52','10','50'],
+                symbolSize: 6,
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        },
+                        lineStyle: {            // 系列级个性化折线样式，横向渐变描边
+                            width: 2,
+                            shadowColor : 'rgba(0,0,0,0.5)',
+                            shadowBlur: 10,
+                            shadowOffsetX: 8,
+                            shadowOffsetY: 8
+                        }
+                    },
+                    emphasis : {
+                        label : {show: true}
+                    }
+                }
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+    }
+    );
+    });
+</script>
+</body>
+</html>
